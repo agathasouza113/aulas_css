@@ -1,0 +1,288 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 50px 0;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+}
+
+section {
+    padding: 50px;
+    margin: 20px 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+a:hover {
+    color: #555;
+}
+
+/* Seções para cada elemento */
+#carousel, #accordion, #tabs, #parallax, #cards, #progress-bar, #modals, #hover, #lightbox, #timeline, #flip-cards, #svg-animation {
+    margin-top: 60px; /* Para dar espaço abaixo da navegação fixa */
+}
+
+.main-menu{
+    background-color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px 0;
+}
+
+.main-menu ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.main-menu>ul>li{
+    position: relative;
+    margin: 0 15px;
+}
+
+.main-menu a{
+    color: #d6d6d6;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: all 0.3s ease; /*suaviza transições de cor */
+}
+
+.main-menu>ul>li>a{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.main-menu a:hover{
+    background-color: #c5c4c4;
+    color: #e1dfdf;
+}
+
+.main-menu a:active{
+    background-color: #444343;
+    color: #dad9d9;
+}
+
+.main-menu a:visited{
+    color: rgb(149, 144, 149);
+}
+
+.submenu{
+    display: none; /*submenu invisivel por padrão*/
+    position: absolute; /*posicionado em relação ao li pai */
+    top: 100%;
+    left: 0;
+    background-color: #201e20;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgb(221, 220, 220); /*sombra para destacar*/
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(-10px); /*levemente deslocado para cima*/
+    transition: opacity 0.3s, transform 0.3s; /*animação suave na abertura */
+}
+
+.main-menu li:hover>.submenu{
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.submenu li{
+    width: 100%;
+}
+
+.submenu a{
+    padding: 12px 20px;
+    font-size: 0.9rem;
+}
+
+.submenu a:hover{
+    background-color: #787777;
+}
+
+.main-menu>ul>li>a::after{
+    content: '\25BC';
+    font-size: 0.7rem;
+    margin-left: 5px;
+    transition: transform 0.3s;
+}
+.main-menu>ul>li>a:after{
+    content: '\25BC';
+    font-size: 0.7rem;
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.main-menu>ul>li:hover>a:after{
+    transform: rotate( -180deg );
+}
+
+.main-menu .active>a{
+    background-color: #555;
+    color: white;
+}
+
+#acordion1{
+    background-color: #d3d2d2;
+}
+
+.basic-accordion{
+    display: block;
+    width: auto;
+    margin: 10px 0;
+}
+
+.basic-accordion p{
+    padding-left: 10px;
+}
+
+.basic-accordion summary{
+    display: flex;
+    background: radial-gradient(circle, rgb(189, 188, 188) 0%, rgb(98, 98, 98) 100%);
+    color: whitesmoke;
+    border-radius: 8px;
+    padding: 15px;
+    cursor: pointer;
+    font-weight: 700;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.basic-accordion summary::before{
+    content: "+";
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 5px;
+    width: 20px;
+    text-align: center;
+}
+
+.basic-accordion[open] summary::before{
+    content: "-";
+}
+
+/*Acordeon 2*/
+#acordion2 {
+  width: 90%;
+  height: auto;
+  background-color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container{
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.accordion-item{
+  background-color: #000000;
+  border-radius: .4rem;
+}
+
+.accordion-item hr{
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.accordion-link{
+  font-size: 1.6rem;
+  color: rgba(255,255,255,.8);
+  text-decoration: none;
+  background-color: #000000;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.accordion-link h3{
+  font-weight:500;
+  font-size: 20px;
+}
+
+.accordion-link i{
+  color: #f7f1ff;
+  padding: .5rem;
+  
+}
+
+.accordion-link ul{
+  display:flex;
+  align-items: flex-end;
+  list-style-type: none;
+  margin-left: 25px;
+}
+
+.accordion-link li{
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.4);
+  padding: 0 0 1px 5px;
+}
+
+.accordion-link div{
+  display: flex;
+}
+
+.accordion-link .ion-md-arrow-down{
+  display: none;
+}
+
+.answer{
+  max-height: 0;
+  overflow: hidden;
+  position: relative;
+  background-color: #000;
+  transition: max-height 650ms;
+}
+
+
+.answer p{
+  color: #fff;
+  font-size: 15px;
+  padding: 2rem;
+  
+}
+
+.accordion-item:target .answer{
+  max-height: 20rem;
+}
+
+.accordion-item:target .accordion-link .ion-md-arrow-forward{
+  display: none
+}
+
+.accordion-item:target .accordion-link .ion-md-arrow-down{
+  display: block;
+}
+
