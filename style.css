@@ -287,82 +287,84 @@ a:hover {
 }
 
 /*Tabs (abas)*/
-
-@import "compass/css3";
-
-.abas001 {
-  box-sizing: border-box;
-} 
-
-
-::selection {
-  background-color: #787777;
+/* Estilos principais */
+.tabs-container {
+    font-family: Arial, sans-serif;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #121213;
 }
 
-.tabbed {
-  width: 700px;
-  margin: 50px auto;
+/* Estilo das labels (abas) */
+.tab-buttons label {
+    display: inline-block;
+    padding: 15px 30px;
+    cursor: pointer;
+    background-color: #4b4b4c;
+    color: white;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 
-.tabbed > input {
-  display: none;
+/* Estilo da aba ativa */
+input[type="radio"]:checked + .tab-buttons label {
+    background-color: #5e5e5e;
 }
 
-.tabbed > label {
-  display: block;
-  float: left;
-  padding: 12px 20px;
-  margin-right: 5px;
-  cursor: pointer;
-  transition: background-color .3s;
+/* Estilo do marcador de aba */
+.tab-marker {
+    position: absolute;
+    bottom: 0;
+    height: 4px;
+    background-color: #575757;
+    transition: left 0.3s ease;
+    width: 33.3%; /* Corresponde a cada aba */
+    z-index: -1;
 }
 
-.tabbed > label:hover,
-.tabbed > input:checked + label {
-  background: #c2c1c1;
+/* Posicionando o marcador quando a aba 1 está ativa */
+#tab1:checked ~ .tab-buttons .tab-marker {
+    left: 0%;
 }
 
-.tabs {
-  clear: both;
-  perspective: 600px;
+/* Posicionando o marcador quando a aba 2 está ativa */
+#tab2:checked ~ .tab-buttons .tab-marker {
+    left: 33.3%;
 }
 
-.tabs > div {
-  width: 700px;
-  position: absolute;
-  border: 2px solid #494a4a;
-  padding: 10px 30px 40px;
-  line-height: 1.4em;
-  opacity: 0;
-  transform: rotateX(-20deg);
-  transform-origin: top center;
-  transition: opacity .3s, transform 1s;
-  z-index: 0;
+/* Posicionando o marcador quando a aba 3 está ativa */
+#tab3:checked ~ .tab-buttons .tab-marker {
+    left: 66.6%;
 }
 
-#tab-nav-1:checked ~ .tabs > div:nth-of-type(1),
-#tab-nav-2:checked ~ .tabs > div:nth-of-type(2),
-#tab-nav-3:checked ~ .tabs > div:nth-of-type(3),
-#tab-nav-4:checked ~ .tabs > div:nth-of-type(4){
-  transform: rotateX(0);
-  opacity: 1;
-  z-index: 1;
+/* Estilos do conteúdo */
+.tab-content {
+    display: flex;
+    flex-direction: column;
+    background-color: #f2f2f2;
+    padding: 20px;
 }
 
-@media screen and (max-width: 700px) {
-  .tabbed { width: 400px }
-  .tabbed > label { display: none }
-  .tabs > div {
-    width: 400px;
-    border: none;
-    padding: 0;
-    opacity: 1;
-    position: relative;
-    transform: none;
-    margin-bottom: 60px;
-  }
-  .tabs > div h2 {
-    border-bottom: 2px solid #4EC6DE;
-    padding-bottom: .5em;
-  }
+/* Estilo do painel de conteúdo */
+.content-panel {
+    display: none;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #202020;
 }
+
+/* Mostrar conteúdo da aba ativa */
+#tab1:checked ~ .tab-content #content1,
+#tab2:checked ~ .tab-content #content2,
+#tab3:checked ~ .tab-content #content3 {
+    display: block;
+}
+
