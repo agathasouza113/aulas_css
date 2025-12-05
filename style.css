@@ -190,10 +190,8 @@ a:hover {
 
 /*Acordeon 2*/
 :root {
-  --primary: #227093;
-  --secondary: #ff5252;
-  --background: #eee;
-  --highlight: #ffda79;
+  --secondary: #000000;
+  --background: #c4c3c3;
   /* Theme color */
   --theme: var(--primary);
 }
