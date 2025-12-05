@@ -216,7 +216,6 @@ a:hover {
   max-height: 10rem;
 }
 
-/* Visual styles */
 .accordion {
   color: var(--theme);
   border: 2px solid;
@@ -258,7 +257,6 @@ a:hover {
   --theme: var(--secondary);
 }
 
-/* Arrow animation */
 .tab input:not(:checked) + .tab__label:hover::after {
   animation: bounce .5s infinite;
 }
@@ -270,6 +268,159 @@ a:hover {
     transform: rotate(90deg) translate(-.25rem);
   }
 }
+/*Acordeon 3*/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+ @import url(https://fonts.googleapis.com/css?family=Montserrat:700);
+
+ h1 {
+	 text-align: start;
+	 font-family: Montserrat, sans-serif;
+	 color: #333;
+}
+ .accordion3 {
+	 width: 100%;
+	 max-width: 1080px;
+	 height: 300px;
+	 overflow: hidden;
+	 margin: 10px auto;
+}
+ .accordion3 ul {
+	 width: 100%;
+	 display: table;
+	 table-layout: fixed;
+	 margin: 0;
+	 padding: 0;
+}
+ .accordion3 ul li {
+    filter: brightness(0.75);
+	 display: table-cell;
+	 vertical-align: bottom;
+	 position: relative;
+	 width: 16.666%;
+	 height: 250px;
+	 background-repeat: no-repeat;
+	 background-position: center center;
+	 transition: all 500ms ease;
+}
+ .accordion3 ul li div {
+	 display: block;
+	 overflow: hidden;
+	 width: 100%;
+}
+ .accordion3 ul li div a {
+	 display: block;
+	 height: 250px;
+	 width: 100%;
+	 position: relative;
+	 z-index: 3;
+	 padding: 15px 20px;
+	 box-sizing: border-box;
+	 color: #fff;
+	 text-decoration: none;
+	 font-family: Open Sans, sans-serif;
+	 transition: all 200ms ease;
+}
+ .accordion3 ul li div a * {
+	 opacity: 0;
+	 margin: 0;
+	 width: 100%;
+	 text-overflow: ellipsis;
+	 position: relative;
+	 z-index: 5;
+	 white-space: normal;
+	 overflow: hidden;
+	 -webkit-transform: translateX(-20px);
+	 transform: translateX(-20px);
+	 -webkit-transition: all 400ms ease;
+	 transition: all 400ms ease;
+     text-shadow: 1px 1px 3px rgba(0,0,0,0.85);
+
+}
+ .accordion3 ul li div a h2 {
+	 font-family: Montserrat, sans-serif;
+	 text-overflow: clip;
+	 font-size: 24px;
+	 text-transform: uppercase;
+	 margin-bottom: 5px;
+     font-weight: 700;
+}
+.accordion3 ul li div a h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+ .accordion3 ul li div a p {
+	 font-size: 13.5px;
+     white-space: normal;
+     font-weight: 600;
+}
+ .accordion3 ul li:nth-child(1) {
+	 background-image: url('imagens/Love_at_First_\ Sting.png');
+}
+ .accordion3 ul li:nth-child(2) {
+	 background-image: url('imagens/Master_of_Puppets.png');
+}
+ .accordion3 ul li:nth-child(3) {
+	 background-image: url('imagens/Appetite_for_Destruction.png');
+}
+ .accordion3 ul li:nth-child(4) {
+	 background-image: url('imagens/Toys_in_the_attic.png');
+}
+ .accordion3 ul li:nth-child(5) {
+	 background-image: url('imagens/Exile_On_Main.png');
+}
+ .accordion3 ul li:nth-child(6) {
+	 background-image: url('imagens/Paranoid.png');
+}
+ .accordion3 ul:hover li, .accordion3 ul:focus-within li {
+	 width: 8%;
+}
+ .accordion3 ul li:focus {
+	 outline: none;
+}
+ .accordion3 ul:hover li:hover, .accordion3 ul li:focus, .accordion3 ul:focus-within li:focus {
+	 width: 60%;
+}
+ .accordion3 ul:hover li:hover a, .accordion3 ul li:focus a, .accordion3 ul:focus-within li:focus a {
+	 background: rgba(0, 0, 0, 0.60);
+}
+ .accordion3 ul:hover li:hover a *, .accordion3 ul li:focus a *, .accordion3 ul:focus-within li:focus a * {
+	 opacity: 1;
+	 -webkit-transform: translateX(0);
+	 transform: translateX(0);
+}
+ .accordion3 ul:hover li {
+	 width: 8% !important;
+}
+ .accordion3 ul:hover li a * {
+	 opacity: 0 !important;
+}
+ .accordion3 ul:hover li:hover {
+     filter: brightness(0.9);
+     width: 60% !important;
+}
+ .accordion3 ul:hover li:hover a {
+	 background: rgba(0, 0, 0, .4);
+}
+ .accordion3 ul:hover li:hover a * {
+	 opacity: 1 !important;
+	 -webkit-transform: translateX(0);
+	 transform: translateX(0);
+}
+ @media screen and (max-width: 600px) {
+	 .accordion3 {
+		 height: auto;  
+	}
+	 .accordion3 ul li, .accordion3 ul:hover li, .accordion3 ul li:hover, .accordion3 ul:hover li:hover {
+		 position: relative;
+		 display: table;
+		 table-layout: fixed;
+		 width: 100%;
+		 -webkit-transition: none;
+		 transition: none;
+	}
+}
+
 
 /*Tabs (abas)*/
 
@@ -439,13 +590,6 @@ a:hover {
 
     color: white;
     padding: 20px;
-}
-
-.parallax-content {
-    background: #1e1f23;
-    padding: 20px 30px;
-    border-radius: 10px;
-    text-align: center;
 }
 
 /*Parallax 2*/
