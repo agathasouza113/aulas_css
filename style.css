@@ -287,7 +287,7 @@ a:hover {
 }
 
 /*Tabs (abas)*/
-/* Estilos principais */
+
 .tabs-container {
     font-family: Arial, sans-serif;
     width: 100%;
@@ -299,7 +299,6 @@ a:hover {
     background-color: #121213;
 }
 
-/* Estilo das labels (abas) */
 .tab-buttons label {
     display: inline-block;
     padding: 15px 30px;
@@ -312,38 +311,34 @@ a:hover {
     border-top-right-radius: 8px;
 }
 
-/* Estilo da aba ativa */
-input[type="radio"]:checked + .tab-buttons label {
-    background-color: #5e5e5e;
-}
 
-/* Estilo do marcador de aba */
+
 .tab-marker {
     position: absolute;
     bottom: 0;
     height: 4px;
     background-color: #575757;
     transition: left 0.3s ease;
-    width: 33.3%; /* Corresponde a cada aba */
+    width: 33.3%; 
     z-index: -1;
 }
 
-/* Posicionando o marcador quando a aba 1 está ativa */
+
 #tab1:checked ~ .tab-buttons .tab-marker {
     left: 0%;
 }
 
-/* Posicionando o marcador quando a aba 2 está ativa */
+
 #tab2:checked ~ .tab-buttons .tab-marker {
     left: 33.3%;
 }
 
-/* Posicionando o marcador quando a aba 3 está ativa */
+
 #tab3:checked ~ .tab-buttons .tab-marker {
     left: 66.6%;
 }
 
-/* Estilos do conteúdo */
+
 .tab-content {
     display: flex;
     flex-direction: column;
@@ -351,7 +346,7 @@ input[type="radio"]:checked + .tab-buttons label {
     padding: 20px;
 }
 
-/* Estilo do painel de conteúdo */
+
 .content-panel {
     display: none;
     padding: 20px;
@@ -361,19 +356,94 @@ input[type="radio"]:checked + .tab-buttons label {
     color: #202020;
 }
 
-/* Mostrar conteúdo da aba ativa */
+
 #tab1:checked ~ .tab-content #content1,
 #tab2:checked ~ .tab-content #content2,
 #tab3:checked ~ .tab-content #content3 {
     display: block;
 }
 
+/*segunda aba*/
+.abas {
+    position: relative;
+    margin: 2rem 0;
+    background: #aeaeae;
+    height: 15rem;
+}
+
+.abas::before, .abas::after {
+    content: "";
+    display: table;
+}
+
+.abas::after {
+    clear: both;
+}
+
+.aba {
+    float: left;
+}
+
+.tab-escolha {
+    display: none;
+}
+
+.tab-label {
+    position: relative;
+    display: block;
+    line-height: 2.75em;
+    height: 3em;
+    padding: 0 1.618em;
+    background: #484848;
+    border-right: 0.125rem solid #353636;
+    color: #fff;
+    cursor: pointer;
+    top: 0;
+    transition: all 0.3s;
+}
+
+.tab-label:hover{
+    top: -0.25rem;
+    transition: top 0.25s;
+}
+
+.tab-content1{
+    min-width: auto ;
+    height: auto;
+    position: absolute;
+    z-index: 1;
+    top: 2.75em;
+    left: 0;
+    padding: 1rem;
+    background: #ffffff00;
+    color: #000000;
+    border-bottom: 0 solid #bdc3c7;
+    opacity: 0;
+    transition: all 0.35s;
+}
+
+.tab-escolha:checked + .tab-label {
+    background: #fff;
+    color: #2c3e50;
+    border-bottom: 0;
+    border-right: 0 solid #fff;
+    transition: all 0.3s;
+    z-index: 1;
+    top: -0.06rem;
+}
+
+.tab-escolha:checked + label + .tab-content1 {
+    z-index: 2;
+    opacity: 1;
+    transition: all 0.3s;
+}
+
 /*Aqui vai ser o parallax*/
 .parallax-section {
     position: relative;
-    height: 35rem; /* ajuste o tamanho que quiser */
+    height: 35rem; 
     background-image: url("imagens/1198782-3840x2160-desktop-4k-studio-ghibli-wallpaper-image.jpg");
-    background-attachment: fixed;  /* O SEGREDO DO PARALLAX */
+    background-attachment: fixed; 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -387,10 +457,87 @@ input[type="radio"]:checked + .tab-buttons label {
 }
 
 .parallax-content {
-    background: rgba(0,0,0,0.4); /* caixa para melhorar a leitura (opcional) */
+    background: rgba(0,0,0,0.4);
     padding: 20px 30px;
     border-radius: 10px;
     text-align: center;
 }
+
+/*Timeline*/
+
+#timeline main {
+  width: 70%;
+  margin: 60px auto;
+  position: relative;
+  counter-reset: contador;
+}
+
+
+#timeline main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #000000, #555555);
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+
+#timeline main p {
+  width: 45%;
+  padding: 25px;
+  border: 3px solid transparent;
+  border-radius: 10px;
+  background: #fff;
+  margin: 60px 0;
+  font-size: 16px;
+
+ 
+  border-image: linear-gradient(90deg, #000000, #777777) 1;
+  position: relative;
+}
+
+
+#timeline main p:nth-child(odd) {
+  margin-right: auto;
+}
+
+#timeline main p:nth-child(even) {
+  margin-left: auto;
+}
+
+
+#timeline main p::before {
+  counter-increment: contador;
+  content: counter(contador);
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 35px;
+  height: 35px;
+
+  background: #000000;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+
+#timeline main p:nth-child(odd)::before {
+  right: -60px;
+}
+
+#timeline main p:nth-child(even)::before {
+  left: -60px;
+}
+
 
 
