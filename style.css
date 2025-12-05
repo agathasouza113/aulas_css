@@ -368,3 +368,29 @@ input[type="radio"]:checked + .tab-buttons label {
     display: block;
 }
 
+/*Aqui vai ser o parallax*/
+.parallax-section {
+    position: relative;
+    height: 35rem; /* ajuste o tamanho que quiser */
+    background-image: url("imagens/1198782-3840x2160-desktop-4k-studio-ghibli-wallpaper-image.jpg");
+    background-attachment: fixed;  /* O SEGREDO DO PARALLAX */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    padding: 20px;
+}
+
+.parallax-content {
+    background: rgba(0,0,0,0.4); /* caixa para melhorar a leitura (opcional) */
+    padding: 20px 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
