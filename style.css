@@ -438,11 +438,11 @@ a:hover {
     transition: all 0.3s;
 }
 
-/*Aqui vai ser o parallax*/
+/*Parallax 1*/
 .parallax-section {
     position: relative;
     height: 35rem; 
-    background-image: url("imagens/1198782-3840x2160-desktop-4k-studio-ghibli-wallpaper-image.jpg");
+    background-image: url("imagens/1.png");
     background-attachment: fixed; 
     background-size: cover;
     background-position: center;
@@ -457,10 +457,39 @@ a:hover {
 }
 
 .parallax-content {
-    background: rgba(0,0,0,0.4);
+    background: #1e1f23;
     padding: 20px 30px;
     border-radius: 10px;
     text-align: center;
+}
+
+/*Parallax 2*/
+#parallax
+.parallax {
+    margin: 0;
+    display: grid;
+    place-content: center;
+    grid-auto-flow: column;
+    gap: 40px;
+}
+
+.parallax img {
+    --f: .1;
+    --r: 10px;
+    --_f:calc(100%*var(--f)/(1 + var(--f)));
+    --_a: calc(90deg*var(--f));
+    width: 250px;
+    aspect-ratio: calc(1+var(--f));
+    object-fit: cover;
+    clip-path: inset(0 var(--_f) 0 0 round var(--r));
+    transform: perspective(400px) var(--_t, rotateY(var(--_a)));
+    transition: .5s;
+    cursor: pointer;
+}
+
+.parallax img:hover {
+    clip-path: inset( 0 0 0 var(--_f) round var(--r));
+    --_t: translateX(calc(-1 *var(--_f))) rotateY(calc(-1*var(--_a)));
 }
 
 /*Timeline*/
